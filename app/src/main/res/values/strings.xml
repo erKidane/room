@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">AbschlussAufgabe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    -------------------Home Screen-------------------
+
+    <string name="START">Start</string>
+    <string name="Anomaly_List">Anomaly List</string>
+
+    -------------------Game Instructions-------------------
+
+    <string name="How_to_Play">How to Play</string>
+    <string name="Room">Use the arrows to move yourself in thr room.</string>
+    <string name="Anomaly">In the room, the objects will change, so stay alert.</string>
+    <string name="Report">If you notice any changes, report them by clicking on the Report button.</string>
+    <string name="Play">Play</string>
+
+    -------------------Anomaly List-------------------
+
+    <string name="AnomaTitle">ANOMALYs</string>
+    <string name="ghost1">Mimic</string>
+
+
+
+
+
 </resources>
