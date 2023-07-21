@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.abschlussaufgabe.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_anomalyFragment"
+            app:destination="@id/anomalyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anomalyFragment"
+        android:name="com.example.abschlussaufgabe.ui.AnomalyFragment"
+        android:label="AnomalyFragment" />
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.example.abschlussaufgabe.ui.InstructionsFragment"
+        android:label="InstructionsFragment" />
 </navigation>
