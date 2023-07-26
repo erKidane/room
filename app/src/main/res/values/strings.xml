@@ -5,8 +5,9 @@
 
     -------------------Home Screen-------------------
 
-    <string name="START">Start</string>
-    <string name="Anomaly_List">Anomaly List</string>
+    <string name="START">START</string>
+    <string name="option">OPTION</string>
+    <string name="Anomaly_List">ANOMALYS</string>
 
     -------------------Game Instructions-------------------
 
@@ -16,9 +17,17 @@
     <string name="Report">If you notice any changes, report them by clicking on the Report button.</string>
     <string name="Play">Play</string>
 
+    -------------------Option-------------------
+
+    <string name="Option">OPTION</string>
+    <string name="music">MUSIC</string>
+    <string name="language">LANGUAGE</string>
+
+
+
     -------------------Anomaly List-------------------
 
-    <string name="AnomaTitle">ANOMALYs</string>
+    <string name="AnomaTitle">ANOMALYS</string>
     <string name="ghost1">Mimic</string>
     <string name="g1description">Mimics are capable of replicating the visual structure of an object.</string>
     <string name="ghost2">Shadow</string>
@@ -31,10 +40,6 @@
     <string name="g5description">Oemor come very close to the person and want to sit next to them.</string>
     <string name="ghost6">Ermi</string>
     <string name="g6description">Ermis paints over pictures.</string>
-
-
-
-
 
 
 </resources>

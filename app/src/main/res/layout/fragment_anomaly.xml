@@ -10,13 +10,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Grey"
+        android:background="@color/DarkBlue"
         tools:context=".ui.AnomalyFragment">
 
+
         <pl.droidsonroids.gif.GifImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/backroundanomalylist1"
+            android:id="@+id/gifImageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/anomalylicht"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,32 +26,51 @@
 
         </pl.droidsonroids.gif.GifImageView>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/anomalyroom">
 
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/back"
+            app:layout_constraintEnd_toStartOf="@+id/tvAnomalys"
+            app:layout_constraintHorizontal_bias="0.900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
 
         <TextView
-            android:id="@+id/tvTitel"
+            android:id="@+id/tvAnomalys"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="56dp"
             android:fontFamily="@font/addisababa"
             android:text="@string/AnomaTitle"
-            android:textColor="@color/LightRed"
+            android:textColor="#FF7C53"
             android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.201"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvAnomaly"
-            android:layout_width="573dp"
-            android:layout_height="253dp"
-            android:layout_marginBottom="36dp"
+            android:id="@+id/rvAnomalys"
+            android:layout_width="520dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="72dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.725"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/item_list" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

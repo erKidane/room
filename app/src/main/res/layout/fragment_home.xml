@@ -10,17 +10,59 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/DarkBlue"
         tools:context=".ui.HomeFragment">
 
 
-        <ImageView
-            android:id="@+id/ivHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/startbildschirm1"
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:src="@drawable/homelicht"
+            tools:layout_editor_absoluteX="-92dp"
+            tools:layout_editor_absoluteY="0dp">
+
+        </pl.droidsonroids.gif.GifImageView>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="130sp"
+            android:layout_height="130sp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/notizzettel"
+            android:text="@string/START"
+            android:fontFamily="@font/addisababa"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnAnomalys"
+            android:layout_width="130sp"
+            android:layout_height="130sp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/notizzettel"
+            android:fontFamily="@font/addisababa"
+            android:text="@string/Anomaly_List"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnStart"
+            app:layout_constraintStart_toStartOf="" />
+
+        <Button
+            android:id="@+id/btnOption"
+            android:layout_width="130sp"
+            android:layout_height="130sp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/notizzettel"
+            android:fontFamily="@font/addisababa"
+            android:text="@string/option"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toEndOf="@+id/btnStart" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

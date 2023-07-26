@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -10,16 +9,31 @@
         android:name="com.example.abschlussaufgabe.ui.HomeFragment"
         android:label="HomeFragment" >
         <action
+            android:id="@+id/action_homeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_anomalyFragment"
             app:destination="@id/anomalyFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_instructionsFragment"
-            app:destination="@id/instructionsFragment" />
+            android:id="@+id/action_homeFragment_to_optionFragment"
+            app:destination="@id/optionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionFragment"
+        android:name="com.example.abschlussaufgabe.ui.OptionFragment"
+        android:label="OptionFragment" >
+        <action
+            android:id="@+id/action_optionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/anomalyFragment"
         android:name="com.example.abschlussaufgabe.ui.AnomalyFragment"
-        android:label="AnomalyFragment" />
+        android:label="AnomalyFragment" >
+        <action
+            android:id="@+id/action_anomalyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.example.abschlussaufgabe.ui.InstructionsFragment"
