@@ -34,7 +34,7 @@
         </ImageView>
 
         <ImageView
-            android:id="@+id/ivBack"
+            android:id="@+id/ivBackfromAnomalys"
             android:layout_width="50sp"
             android:layout_height="50sp"
             android:layout_marginTop="52dp"

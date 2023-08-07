@@ -9,15 +9,18 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.adapter.GhostAdapter
 import com.example.abschlussaufgabe.databinding.FragmentAnomalyBinding
+import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
 
 class AnomalyFragment : Fragment() {
 
     private lateinit var binding: FragmentAnomalyBinding
 
-    private val viewModel: ViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState) }
@@ -34,13 +37,19 @@ class AnomalyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /// TODO: app crashes after navigating back to home?! 
+        //navigation back to HomeFragment 
+        binding.ivBackfromAnomalys.setOnClickListener{
+            findNavController().navigate(R.id.action_optionFragment_to_homeFragment)
+        }
 
-
-
-
+        //ghost rv
+        viewModel.ghosts.observe(viewLifecycleOwner){
+               binding.rvAnomalys.adapter = GhostAdapter(requireContext(),it)
+           }
 
     }
 
 
-
 }
+

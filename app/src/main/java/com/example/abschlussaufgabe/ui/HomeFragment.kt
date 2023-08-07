@@ -10,13 +10,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.databinding.FragmentHomeBinding
-import com.example.abschlussaufgabe.viewmodel.ViewModel
+import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-    private val viewModel: ViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -31,9 +31,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //navigation to the instructionFragment
+
         binding.btnStart.setOnClickListener{
-            findNavController().navigate()
+            findNavController().navigate(R.id.action_homeFragment_to_instructionsFragment)
         }
+
+        //navigation to the optionFragment
+
+        binding.btnOption.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_optionFragment)
+        }
+
+        //navigation to the anomalyFragment
+
+        binding.btnAnomalys.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_anomalyFragment)
+        }
+
 
     }
 

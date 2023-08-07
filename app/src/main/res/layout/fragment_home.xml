@@ -20,8 +20,10 @@
             android:layout_height="match_parent"
             android:alpha="0.9"
             android:src="@drawable/homelicht"
-            tools:layout_editor_absoluteX="-92dp"
-            tools:layout_editor_absoluteY="0dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         </pl.droidsonroids.gif.GifImageView>
 
@@ -49,7 +51,7 @@
             android:text="@string/Anomaly_List"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnStart"
-            app:layout_constraintStart_toStartOf="" />
+            />
 
         <Button
             android:id="@+id/btnOption"

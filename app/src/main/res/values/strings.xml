@@ -24,7 +24,6 @@
     <string name="language">LANGUAGE</string>
 
 
-
     -------------------Anomaly List-------------------
 
     <string name="AnomaTitle">ANOMALYS</string>
@@ -41,5 +40,8 @@
     <string name="ghost6">Ermi</string>
     <string name="g6description">Ermis paints over pictures.</string>
 
+    -------------------InGameBtns-------------------
+
+    <string name="reportBtn">Report</string>
 
 </resources>

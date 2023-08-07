@@ -27,8 +27,8 @@ class GhostAdapter (
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val ghosts = dataset[position]
-        holder.binding.tvName.text = context.resources.getString(ghosts.name)
-        holder.binding.tvBeschreibung.text = context.resources.getString(ghosts.description)
+        holder.binding.tvGhostName.text = context.resources.getString((ghosts.name))
+        holder.binding.tvGhostDes.text = context.resources.getString(ghosts.description)
     }
 
 

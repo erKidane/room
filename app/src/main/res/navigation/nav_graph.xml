@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
@@ -37,5 +38,63 @@
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.example.abschlussaufgabe.ui.InstructionsFragment"
-        android:label="InstructionsFragment" />
+        android:label="InstructionsFragment" >
+        <action
+            android:id="@+id/action_instructionsFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frontFragment"
+        android:name="com.example.abschlussaufgabe.ui.FrontFragment"
+        android:label="fragment_front"
+        tools:layout="@layout/fragment_front" >
+        <action
+            android:id="@+id/action_frontFragment_to_downFragment"
+            app:destination="@id/downFragment" />
+        <action
+            android:id="@+id/action_frontFragment_to_rightFragment"
+            app:destination="@id/rightFragment" />
+        <action
+            android:id="@+id/action_frontFragment_to_topFragment"
+            app:destination="@id/topFragment" />
+        <action
+            android:id="@+id/action_frontFragment_to_leftFragment"
+            app:destination="@id/leftFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/downFragment"
+        android:name="com.example.abschlussaufgabe.ui.DownFragment"
+        android:label="fragment_down"
+        tools:layout="@layout/fragment_down" >
+        <action
+            android:id="@+id/action_downFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leftFragment"
+        android:name="com.example.abschlussaufgabe.ui.LeftFragment"
+        android:label="fragment_left"
+        tools:layout="@layout/fragment_left" >
+        <action
+            android:id="@+id/action_leftFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rightFragment"
+        android:name="com.example.abschlussaufgabe.ui.RightFragment"
+        android:label="fragment_right"
+        tools:layout="@layout/fragment_right" >
+        <action
+            android:id="@+id/action_rightFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.example.abschlussaufgabe.ui.TopFragment"
+        android:label="fragment_top"
+        tools:layout="@layout/fragment_top" >
+        <action
+            android:id="@+id/action_topFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
 </navigation>

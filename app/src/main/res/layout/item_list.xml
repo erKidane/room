@@ -23,7 +23,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvGhostName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tvGhostDes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -48,7 +48,7 @@
                     android:textColor="@color/DarkBlue"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintStart_toEndOf="@+id/tvGhostName"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="1.0"
                     tools:text="@string/g1description" />

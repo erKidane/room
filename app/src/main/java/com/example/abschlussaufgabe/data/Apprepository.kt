@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.abschlussaufgabe.R
 import com.example.abschlussaufgabe.data.model.Ghost
+import com.example.abschlussaufgabe.data.model.Score
 
 class Apprepository {
 
@@ -11,9 +12,13 @@ class Apprepository {
     val ghostList: LiveData<List<Ghost>>
         get() = _ghostList
 
+
     init {
         loadGhosts()
     }
+
+
+
 
     fun loadGhosts(){
         _ghostList.value = listOf<Ghost>(

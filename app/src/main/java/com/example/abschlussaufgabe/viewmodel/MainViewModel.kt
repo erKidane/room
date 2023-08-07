@@ -3,7 +3,7 @@ package com.example.abschlussaufgabe.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.abschlussaufgabe.data.Apprepository
 
-class ViewModel: ViewModel() {
+class MainViewModel: ViewModel() {
 
     private val repository = Apprepository()
 
@@ -12,4 +12,5 @@ class ViewModel: ViewModel() {
     init {
         repository.loadGhosts()
     }
+
 }

@@ -9,12 +9,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
-import com.example.abschlussaufgabe.databinding.FragmentOptionBinding
+import com.example.abschlussaufgabe.databinding.FragmentDownBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 
 
-class OptionFragment : Fragment() {
-    private lateinit var binding: FragmentOptionBinding
+class DownFragment : Fragment() {
+
+    private lateinit var binding: FragmentDownBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -24,18 +25,16 @@ class OptionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_option, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_down, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //navigation back to HomeFragment
-
-        binding.ivBack.setOnClickListener{
-            findNavController().navigate(R.id.action_optionFragment_to_homeFragment)
+        //navigation to the topFragment
+        binding.ivTop.setOnClickListener {
+            findNavController().navigate(R.id.action_topFragment_to_frontFragment)
         }
     }
-
-
 }
