@@ -37,10 +37,9 @@ class AnomalyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /// TODO: app crashes after navigating back to home?! 
         //navigation back to HomeFragment 
         binding.ivBackfromAnomalys.setOnClickListener{
-            findNavController().navigate(R.id.action_optionFragment_to_homeFragment)
+            findNavController().popBackStack()
         }
 
         //ghost rv

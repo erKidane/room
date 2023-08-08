@@ -60,6 +60,9 @@
         <action
             android:id="@+id/action_frontFragment_to_leftFragment"
             app:destination="@id/leftFragment" />
+        <action
+            android:id="@+id/action_frontFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/downFragment"
@@ -69,6 +72,9 @@
         <action
             android:id="@+id/action_downFragment_to_frontFragment"
             app:destination="@id/frontFragment" />
+        <action
+            android:id="@+id/action_downFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/leftFragment"
@@ -78,6 +84,9 @@
         <action
             android:id="@+id/action_leftFragment_to_frontFragment"
             app:destination="@id/frontFragment" />
+        <action
+            android:id="@+id/action_leftFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/rightFragment"
@@ -87,6 +96,9 @@
         <action
             android:id="@+id/action_rightFragment_to_frontFragment"
             app:destination="@id/frontFragment" />
+        <action
+            android:id="@+id/action_rightFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/topFragment"
@@ -96,5 +108,12 @@
         <action
             android:id="@+id/action_topFragment_to_frontFragment"
             app:destination="@id/frontFragment" />
+        <action
+            android:id="@+id/action_topFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/popUpFragment"
+        android:name="com.example.abschlussaufgabe.ui.PopUpFragment"
+        android:label="PopUpFragment" />
 </navigation>

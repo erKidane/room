@@ -33,7 +33,7 @@ class LeftFragment : Fragment() {
 
         //navigation to the rightFragment
         binding.ivRight.setOnClickListener {
-            findNavController().navigate(R.id.action_leftFragment_to_frontFragment)
+            findNavController().popBackStack()
         }
     }
 }

@@ -34,7 +34,7 @@ class TopFragment : Fragment() {
 
         //navigation to the topFragment
         binding.ivDown.setOnClickListener {
-            findNavController().navigate(R.id.action_topFragment_to_frontFragment)
+            findNavController().popBackStack()
         }
     }
 }

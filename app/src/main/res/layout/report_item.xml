@@ -12,10 +12,12 @@
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cvGhosts"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_marginEnd="180dp"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/Grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,10 +35,23 @@
                     tools:text="mimic">
                 </TextView>
 
+                <TextView
+                    android:id="@+id/tvDescrib"
+                    android:layout_width="254dp"
+                    android:layout_height="34dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivGhostPic"
+                    tools:text="@string/g1description">
+
+                </TextView>
+
                 <ImageView
+                    android:id="@+id/ivGhostPic"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginBottom="48dp"
+                    android:layout_marginBottom="64dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
