@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
@@ -27,17 +28,7 @@ class FrontFragment : Fragment() {
 
     private val viewModel: MainViewModel by activityViewModels()
 
-    private var ghostsName: String? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        //ghostsName
-        arguments?.let {
-            ghostsName = it.getString("Mimic")
-        }
-
-
-    }
 
 
     override fun onCreateView(
@@ -49,17 +40,20 @@ class FrontFragment : Fragment() {
         return binding.root
     }
 
+    //spawning ghosts function
+    fun spawnGhost(image: Drawable) {
+        binding.ivFirstClone.visibility = View.VISIBLE
+        binding.ivFirstClone.setImageDrawable(image)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // spwanTime
+        // spwanTimer
         val delayMillis = (400..800).random()
 
-        //spawning ghosts fun
-        fun spawnGhost(image: Drawable) {
-            binding.ivFirstClone.visibility = View.VISIBLE
-            binding.ivFirstClone.setImageDrawable(image)
-        }
+        val mimic = viewModel.ghosts.value!![0]
+        binding.ivFirst.setImageResource(mimic.image)
 
 
         //spawn the ghost with randomly timer
@@ -67,12 +61,15 @@ class FrontFragment : Fragment() {
             delay(delayMillis.toLong())
             spawnGhost(binding.ivFirstClone.drawable)
         }
+        
+        
 
 
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
 
-            findNavController().navigate(R.id.action_frontFragment_to_popUpFragment)
+            findNavController().navigate(FrontFragmentDirections.actionFrontFragmentToPopUpFragment(mimic.name))
+
 
 
         }
