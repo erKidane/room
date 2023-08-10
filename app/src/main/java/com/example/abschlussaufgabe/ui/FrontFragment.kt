@@ -12,14 +12,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.data.model.Ghost
 import com.example.abschlussaufgabe.databinding.FragmentFrontBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
-var score = 0
-
 
 
 class FrontFragment : Fragment() {
@@ -28,6 +26,18 @@ class FrontFragment : Fragment() {
     private lateinit var binding: FragmentFrontBinding
 
     private val viewModel: MainViewModel by activityViewModels()
+
+    private var ghostsName: String? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //ghostsName
+        arguments?.let {
+            ghostsName = it.getString("Mimic")
+        }
+
+
+    }
 
 
     override fun onCreateView(
@@ -42,45 +52,30 @@ class FrontFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Verzögerung von 3 bis 5 Minuten in Millisekunden
-        val delayMillis = (180000..300000).random()
+        // spwanTime
+        val delayMillis = (400..800).random()
 
-        //spawn ghost
-        fun spawnGhost(image:Drawable){
+        //spawning ghosts fun
+        fun spawnGhost(image: Drawable) {
             binding.ivFirstClone.visibility = View.VISIBLE
             binding.ivFirstClone.setImageDrawable(image)
         }
 
 
-
-        viewModel.viewModelScope.launch(Dispatchers.Main){
+        //spawn the ghost with randomly timer
+        viewModel.viewModelScope.launch(Dispatchers.Main) {
             delay(delayMillis.toLong())
             spawnGhost(binding.ivFirstClone.drawable)
         }
 
 
-/*
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
-            /*
-                    findNavController().navigate(R.id.action_frontFragment_to_popUpFragment)
 
-                    in ein if
-                    score ++
-                    binding.tvScore.text = score.toString()
-                    */
+            findNavController().navigate(R.id.action_frontFragment_to_popUpFragment)
 
 
         }
-
-*/
-
-
-
-
-
-
-
 
 
         //----------------NAVIGATION----------------

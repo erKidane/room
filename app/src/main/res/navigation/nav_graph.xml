@@ -63,6 +63,12 @@
         <action
             android:id="@+id/action_frontFragment_to_popUpFragment"
             app:destination="@id/popUpFragment" />
+        <action
+            android:id="@+id/action_frontFragment_to_popUpFragment2"
+            app:destination="@id/popUpFragment" />
+        <argument
+            android:name="ghostsName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/downFragment"

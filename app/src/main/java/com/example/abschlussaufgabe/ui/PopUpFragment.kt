@@ -42,6 +42,13 @@ class PopUpFragment : Fragment() {
             binding.rvReportGhost.adapter = ReportGhostAdapter(requireContext(),it)
         }
 
+        val ghostName = arguments?.getString("ghostName")
+
+        if (ghostName == ""){
+
+        }
+
+
 
 
     }

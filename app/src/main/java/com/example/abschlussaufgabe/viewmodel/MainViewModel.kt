@@ -1,5 +1,6 @@
 package com.example.abschlussaufgabe.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.abschlussaufgabe.data.Apprepository
 
@@ -12,5 +13,10 @@ class MainViewModel: ViewModel() {
     init {
         repository.loadGhosts()
     }
+
+    //score
+    private var _score: Int = 0
+    val score: Int
+        get() = _score
 
 }
