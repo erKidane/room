@@ -29,8 +29,6 @@ class FrontFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,7 +47,7 @@ class FrontFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // spwanTimer
+        //spwanTimer
         val delayMillis = (400..800).random()
 
         val mimic = viewModel.ghosts.value!![0]
@@ -61,18 +59,21 @@ class FrontFragment : Fragment() {
             delay(delayMillis.toLong())
             spawnGhost(binding.ivFirstClone.drawable)
         }
-        
-        
 
 
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
 
-            findNavController().navigate(FrontFragmentDirections.actionFrontFragmentToPopUpFragment(mimic.name))
-
-
+            findNavController().navigate(
+                FrontFragmentDirections.actionFrontFragmentToPopUpFragment(
+                    mimic.name
+                )
+            )
 
         }
+
+        //score
+        binding.tvScore.text = viewModel.score.value.toString()
 
 
         //----------------NAVIGATION----------------

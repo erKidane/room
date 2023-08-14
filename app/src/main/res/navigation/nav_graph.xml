@@ -120,5 +120,27 @@
         <argument
             android:name="ghostName"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_popUpFragment_to_rightAnswerFragment"
+            app:destination="@id/rightAnswerFragment" />
+        <action
+            android:id="@+id/action_popUpFragment_to_wrongAnswerFragment"
+            app:destination="@id/wrongAnswerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rightAnswerFragment"
+        android:name="com.example.abschlussaufgabe.ui.RightAnswerFragment"
+        android:label="RightAnswerFragment" >
+        <action
+            android:id="@+id/action_rightAnswerFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrongAnswerFragment"
+        android:name="com.example.abschlussaufgabe.ui.WrongAnswerFragment"
+        android:label="WrongAnswerFragment" >
+        <action
+            android:id="@+id/action_wrongAnswerFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
     </fragment>
 </navigation>

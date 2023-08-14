@@ -10,16 +10,17 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
-import com.example.abschlussaufgabe.databinding.FragmentRightAnswerBinding
 import com.example.abschlussaufgabe.databinding.FragmentRightBinding
+import com.example.abschlussaufgabe.databinding.FragmentWrongAnswerBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.Timer
 
 
-class RightAnswerFragment : Fragment() {
+class WrongAnswerFragment : Fragment() {
 
-    private lateinit var binding: FragmentRightAnswerBinding
+    private lateinit var binding: FragmentWrongAnswerBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -30,18 +31,17 @@ class RightAnswerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_right_answer, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_wrong_answer, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvRight.text
 
         viewModel.viewModelScope.launch {
-            delay(800)
-            findNavController().navigate(RightAnswerFragmentDirections.actionRightAnswerFragmentToFrontFragment())
+            delay(400)
+            findNavController().navigate(WrongAnswerFragmentDirections.actionWrongAnswerFragmentToFrontFragment())
         }
 
 
