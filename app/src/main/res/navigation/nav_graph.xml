@@ -117,15 +117,15 @@
         android:id="@+id/popUpFragment"
         android:name="com.example.abschlussaufgabe.ui.PopUpFragment"
         android:label="PopUpFragment" >
-        <argument
-            android:name="ghostName"
-            app:argType="integer" />
         <action
             android:id="@+id/action_popUpFragment_to_rightAnswerFragment"
             app:destination="@id/rightAnswerFragment" />
         <action
             android:id="@+id/action_popUpFragment_to_wrongAnswerFragment"
             app:destination="@id/wrongAnswerFragment" />
+        <argument
+            android:name="ghostsName"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/rightAnswerFragment"

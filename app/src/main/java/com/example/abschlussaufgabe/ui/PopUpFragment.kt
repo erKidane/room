@@ -21,6 +21,7 @@ class PopUpFragment : Fragment() {
     private val viewModel: MainViewModel by activityViewModels()
 
     private var ghostsName: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,6 +29,8 @@ class PopUpFragment : Fragment() {
         arguments?.let {
             ghostsName = it.getInt("ghostName")
         }
+
+
 
 
     }
@@ -51,18 +54,11 @@ class PopUpFragment : Fragment() {
         //rvReport
         viewModel.ghosts.observe(viewLifecycleOwner) {
             binding.rvReportGhost.adapter =
-                ReportGhostAdapter(requireContext(), it, viewModel, ghostsName!!,navController)
+                ReportGhostAdapter(requireContext(), it, viewModel, ghostsName!!, navController)
         }
 
 
 
-
-
-
-        if (ghostsName == R.drawable.bild3) {
-
-            viewModel._score
-        }
 
 
     }

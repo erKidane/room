@@ -13,6 +13,19 @@
         tools:context=".ui.DownFragment">
 
         <ImageView
+            android:id="@+id/ivUnten"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:src="@drawable/unten"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageView
             android:id="@+id/ivTop"
             android:layout_width="70sp"
             android:layout_height="70sp"

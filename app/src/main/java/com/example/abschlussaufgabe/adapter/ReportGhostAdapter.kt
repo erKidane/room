@@ -47,15 +47,14 @@ class ReportGhostAdapter(
         holder.binding.tvDescrib.text = context.resources.getString((reportGhosts.description))
 
         holder.binding.cvGhosts.setOnClickListener {
-            if (ghostName == reportGhosts.name) {
+            if (reportGhosts.name == ghostName) {
 
                 viewModel._score.value = +1
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
                 //Toast.makeText(context, "${viewModel._score}", Toast.LENGTH_SHORT).show()
 
-
-            } else {
+            }else{
                 navController.navigate(R.id.action_popUpFragment_to_wrongAnswerFragment)
             }
         }

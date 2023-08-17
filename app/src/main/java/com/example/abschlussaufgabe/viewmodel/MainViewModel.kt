@@ -3,7 +3,11 @@ package com.example.abschlussaufgabe.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.abschlussaufgabe.data.Apprepository
+import com.example.abschlussaufgabe.remote.MealApi
+import com.example.abschlussaufgabe.remote.Repository
+import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
@@ -20,6 +24,20 @@ class MainViewModel : ViewModel() {
     val score: LiveData<Int>
         get() = _score
 
+//------------------------------ API-------------------------------------
 
+    private val repo = Repository(MealApi)
+
+    init {
+        getRandomMeal()
+    }
+
+    val randomMeal = repo.randomMeal
+
+    fun getRandomMeal() {
+        viewModelScope.launch {
+            repo.getRandomMeal()
+        }
+    }
 
 }
