@@ -31,8 +31,6 @@ class PopUpFragment : Fragment() {
         }
 
 
-
-
     }
 
 
@@ -56,9 +54,6 @@ class PopUpFragment : Fragment() {
             binding.rvReportGhost.adapter =
                 ReportGhostAdapter(requireContext(), it, viewModel, ghostsName!!, navController)
         }
-
-
-
 
 
     }

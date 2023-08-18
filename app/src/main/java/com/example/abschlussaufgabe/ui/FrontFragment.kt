@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import com.example.abschlussaufgabe.R
+import com.example.abschlussaufgabe.data.model.Ghost
 import com.example.abschlussaufgabe.databinding.FragmentFrontBinding
 import com.example.abschlussaufgabe.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
@@ -48,6 +50,20 @@ class FrontFragment : Fragment() {
         //binding.ivFirstShadow.setImageDrawable(image)
     }
 
+    // chatgpts vorschlag
+    private val ghosts = viewModel.ghosts.value!!
+
+    private fun spawnRandomGhost() {
+        val randomGhost = ghosts.random()
+        spawnGhost(randomGhost)
+    }
+
+    private fun spawnGhost(ghost: Ghost) {
+        ghost.isVisible = true
+    }
+
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,23 +88,20 @@ class FrontFragment : Fragment() {
         //spawn the ghost with randomlytimer
         viewModel.viewModelScope.launch(Dispatchers.Main) {
             delay(delayMillis.toLong())
-            spawnShadow()
-            spawnMimic()
-
-
+            spawnRandomGhost()
         }
+
 
 
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
-
-            findNavController().navigate(
-                FrontFragmentDirections.actionFrontFragmentToPopUpFragment(
-                    randomGhost.name
+            val visibleGhost = ghosts.find { it.isVisible }
+            visibleGhost?.let {
+                val ghostName = it.name
+                findNavController().navigate(
+                    FrontFragmentDirections.actionFrontFragmentToPopUpFragment(ghostName)
                 )
-            )
-
-
+            }
         }
 
         //score

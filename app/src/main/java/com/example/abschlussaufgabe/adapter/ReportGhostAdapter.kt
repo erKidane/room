@@ -49,7 +49,7 @@ class ReportGhostAdapter(
         holder.binding.cvGhosts.setOnClickListener {
             if (reportGhosts.name == ghostName) {
 
-                viewModel._score.value = +1
+                viewModel._score.value = viewModel._score.value?.plus(1)
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
                 //Toast.makeText(context, "${viewModel._score}", Toast.LENGTH_SHORT).show()

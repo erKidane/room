@@ -33,7 +33,7 @@ class InstructionsFragment : Fragment() {
 
         //navigation to the frontfragment
         binding.btnPLAY.setOnClickListener {
-            findNavController().navigate(R.id.action_instructionsFragment_to_frontFragment)
+            findNavController().navigate(InstructionsFragmentDirections.actionInstructionsFragmentToFrontFragment())
         }
 
     }
