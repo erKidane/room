@@ -40,27 +40,10 @@ class FrontFragment : Fragment() {
 
     //spawning Mimic ghost
     fun spawnMimic() {
-        binding.ivFirstClone.visibility = View.VISIBLE
+        binding.ivEins.visibility = View.VISIBLE
         //binding.ivFirstClone.setImageDrawable(image)
     }
 
-    //spawning Shadow ghost
-    fun spawnShadow() {
-        binding.ivFirstShadow.visibility = View.VISIBLE
-        //binding.ivFirstShadow.setImageDrawable(image)
-    }
-
-    // chatgpts vorschlag
-    private val ghosts = viewModel.ghosts.value!!
-
-    private fun spawnRandomGhost() {
-        val randomGhost = ghosts.random()
-        spawnGhost(randomGhost)
-    }
-
-    private fun spawnGhost(ghost: Ghost) {
-        ghost.isVisible = true
-    }
 
 
 
@@ -73,36 +56,32 @@ class FrontFragment : Fragment() {
         val delayMillis = (400..800).random()
 
         //initialize Ghosts
-        val shadow = viewModel.ghosts.value!![1]
-        binding.ivFirstShadow.setImageResource(shadow.image)
+
 
 
         val mimic = viewModel.ghosts.value!![0]
-        binding.ivFirst.setImageResource(mimic.image)
+        //binding.ivEins.setImageResource(mimic.image)
 
 
-        val listOfGhosts = listOf(shadow, mimic)
-        var randomGhost = listOfGhosts.random()
 
 
         //spawn the ghost with randomlytimer
         viewModel.viewModelScope.launch(Dispatchers.Main) {
             delay(delayMillis.toLong())
-            spawnRandomGhost()
+            spawnMimic()
+
+
         }
 
 
 
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
-            val visibleGhost = ghosts.find { it.isVisible }
-            visibleGhost?.let {
-                val ghostName = it.name
+
                 findNavController().navigate(
-                    FrontFragmentDirections.actionFrontFragmentToPopUpFragment(ghostName)
-                )
+                    FrontFragmentDirections.actionFrontFragmentToPopUpFragment(mimic.name))
             }
-        }
+
 
         //score
         binding.tvScore.text = viewModel.score.value.toString()

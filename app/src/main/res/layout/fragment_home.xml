@@ -10,61 +10,57 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DarkBlue"
         tools:context=".ui.HomeFragment">
 
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView"
+            android:id="@+id/ImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0.9"
-            android:src="@drawable/homelicht"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/startscreen1"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:layout_editor_absoluteY="-69dp">
 
         </pl.droidsonroids.gif.GifImageView>
 
         <Button
             android:id="@+id/btnStart"
-            android:layout_width="130sp"
-            android:layout_height="130sp"
-            android:layout_marginBottom="64dp"
-            android:background="@drawable/notizzettel"
-            android:text="@string/START"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="208dp"
+            android:backgroundTint="@color/DarkBlue"
             android:fontFamily="@font/addisababa"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/START"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnAnomalys"
-            android:layout_width="130sp"
-            android:layout_height="130sp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="60dp"
-            android:background="@drawable/notizzettel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/DarkBlue"
             android:fontFamily="@font/addisababa"
             android:text="@string/Anomaly_List"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnStart"
-            />
+            app:layout_constraintEnd_toEndOf="@+id/btnOption"
+            app:layout_constraintStart_toStartOf="@+id/btnOption"
+            app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
         <Button
             android:id="@+id/btnOption"
-            android:layout_width="130sp"
-            android:layout_height="130sp"
-            android:layout_marginBottom="48dp"
-            android:background="@drawable/notizzettel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/DarkBlue"
             android:fontFamily="@font/addisababa"
             android:text="@string/option"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toEndOf="@+id/btnStart" />
+            app:layout_constraintEnd_toEndOf="@+id/btnStart"
+            app:layout_constraintStart_toStartOf="@+id/btnStart"
+            app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

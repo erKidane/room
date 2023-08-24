@@ -22,12 +22,11 @@ class Apprepository {
 
     fun loadGhosts(){
         _ghostList.value = listOf<Ghost>(
-            Ghost(R.string.ghost1,R.string.g1description,R.drawable.bild3),
-            Ghost(R.string.ghost2,R.string.g2description,R.drawable.shadow),
-            Ghost(R.string.ghost3,R.string.g3description,R.drawable.bild3),
-            Ghost(R.string.ghost4,R.string.g4description,R.drawable.bild3),
-            Ghost(R.string.ghost5,R.string.g5description,R.drawable.bild3),
-            Ghost(R.string.ghost6,R.string.g6description,R.drawable.bild3),
+            Ghost(0,R.string.ghost1,R.string.g1description,R.drawable.mimic),
+            Ghost(1,R.string.ghost2,R.string.g2description,R.drawable.shadow),
+            Ghost(2,R.string.ghost3,R.string.g3description,R.drawable.lucy),
+            Ghost(3,R.string.ghost4,R.string.g4description,R.drawable.casper),
+            Ghost(4,R.string.ghost6,R.string.g6description,R.drawable.ermi),
         )
     }
 }

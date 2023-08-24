@@ -14,45 +14,32 @@
         tools:context=".ui.OptionFragment">
 
         <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/settinglicht">
+            android:scaleType="fitXY"
+            android:src="@drawable/backroundanomalylistscreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         </pl.droidsonroids.gif.GifImageView>
 
         <ImageView
             android:id="@+id/ivBack"
             android:layout_width="50sp"
             android:layout_height="50sp"
-            android:layout_marginTop="52dp"
-            android:src="@drawable/back"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="0.900"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/pfeilback"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="56dp"
-            android:fontFamily="@font/addisababa"
-            android:text="@string/option"
-            android:textColor="#FF7C53"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-        </TextView>
 
-        <ImageView
-            android:id="@+id/ivback"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/settingroom">
-        </ImageView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

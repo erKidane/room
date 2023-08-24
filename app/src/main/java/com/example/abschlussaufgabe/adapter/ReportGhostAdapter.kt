@@ -1,6 +1,7 @@
 package com.example.abschlussaufgabe.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,9 +48,11 @@ class ReportGhostAdapter(
         holder.binding.tvDescrib.text = context.resources.getString((reportGhosts.description))
 
         holder.binding.cvGhosts.setOnClickListener {
-            if (reportGhosts.name == ghostName) {
+            Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
+            if (reportGhosts.id == ghostName) {
 
                 viewModel._score.value = viewModel._score.value?.plus(1)
+
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
                 //Toast.makeText(context, "${viewModel._score}", Toast.LENGTH_SHORT).show()

@@ -3,8 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="LogoRed">#FF0000</color>
-    <color name="DarkRed">#A0220B</color>
-    <color name="LightRed">#E5232E</color>
-    <color name="Grey">#D2D6D1</color>
-    <color name="DarkBlue">#3a415f</color>
+
+
+    <color name="DarkBlue">#0c134f</color>
+    <color name="midBlue">#1d267d</color>
+    <color name="lightBlue">#5c469c</color>
+    <color name="lightlila">#d4adfc</color>
 </resources>
