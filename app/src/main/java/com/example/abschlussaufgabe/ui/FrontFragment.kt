@@ -43,6 +43,9 @@ class FrontFragment : Fragment() {
         binding.ivEins.visibility = View.VISIBLE
         //binding.ivFirstClone.setImageDrawable(image)
     }
+     fun deSpawnMimic(){
+        binding.ivEins.visibility = View.INVISIBLE
+    }
 
 
 

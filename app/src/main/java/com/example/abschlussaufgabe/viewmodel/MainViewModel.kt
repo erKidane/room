@@ -1,5 +1,6 @@
 package com.example.abschlussaufgabe.viewmodel
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,9 +21,11 @@ class MainViewModel : ViewModel() {
     }
 
     //score
-    val _score = MutableLiveData<Int>()
+    val _score = MutableLiveData(0)
     val score: LiveData<Int>
         get() = _score
+
+
 
 //------------------------------ API-------------------------------------
 

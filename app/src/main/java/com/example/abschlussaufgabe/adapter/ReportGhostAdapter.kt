@@ -47,11 +47,15 @@ class ReportGhostAdapter(
         holder.binding.ivGhostPic.setImageResource(reportGhosts.image)
         holder.binding.tvDescrib.text = context.resources.getString((reportGhosts.description))
 
+        //todo: better a when
+
         holder.binding.cvGhosts.setOnClickListener {
             Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
             if (reportGhosts.id == ghostName) {
 
-                viewModel._score.value = viewModel._score.value?.plus(1)
+                viewModel._score.value =+ 1
+
+
 
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
