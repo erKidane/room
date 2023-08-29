@@ -15,9 +15,11 @@ class Repository(private val api: MealApi) {
         try {
             val result = api.retrofitService.getRandomMeal()
             val meal = result.meals.first()
+            Log.e("ERROR", "api ready")
             _randomMeal.value = meal
         } catch (e: Exception) {
             Log.e("ERROR", "${e.message}")
         }
     }
+
 }

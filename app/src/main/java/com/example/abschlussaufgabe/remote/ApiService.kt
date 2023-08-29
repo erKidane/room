@@ -1,6 +1,6 @@
 package com.example.abschlussaufgabe.remote
 
-import com.example.abschlussaufgabe.remote.model.MealList
+import com.example.abschlussaufgabe.remote.model.MealResult
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -22,7 +22,7 @@ private val retrofit: Retrofit = Retrofit.Builder()
 interface ApiService {
 
     @GET("random.php")
-    suspend fun getRandomMeal(): MealList
+    suspend fun getRandomMeal(): MealResult
 
 }
 
@@ -31,4 +31,5 @@ object MealApi {
         retrofit.create(ApiService::class.java)
     }
 }
+
 

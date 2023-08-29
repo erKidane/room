@@ -50,12 +50,10 @@ class ReportGhostAdapter(
         //todo: better a when
 
         holder.binding.cvGhosts.setOnClickListener {
-            Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
+            //Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
             if (reportGhosts.id == ghostName) {
 
                 viewModel._score.value =+ 1
-
-
 
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
