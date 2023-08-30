@@ -87,7 +87,11 @@ class FrontFragment : Fragment() {
 
 
         //score
-        binding.tvScore.text = viewModel.score.value.toString()
+        viewModel.score.observe(viewLifecycleOwner){
+            binding.tvScore.text = it.score.toString()
+
+        }
+
 
 
         //----------------NAVIGATION----------------

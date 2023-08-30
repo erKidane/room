@@ -48,7 +48,7 @@ class RightFragment : Fragment() {
 
 
 
-
+        //api images
         viewModelMeal.randomMeal.observe(viewLifecycleOwner) {
 
 

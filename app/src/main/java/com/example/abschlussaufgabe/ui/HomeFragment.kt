@@ -35,6 +35,8 @@ class HomeFragment : Fragment() {
 
         binding.btnStart.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_instructionsFragment)
+            viewModel.insertScore(viewModel.scoreFill)
+
         }
 
         //navigation to the optionFragment

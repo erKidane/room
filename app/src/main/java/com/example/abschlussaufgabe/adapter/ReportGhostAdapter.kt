@@ -50,16 +50,20 @@ class ReportGhostAdapter(
         //todo: better a when
 
         holder.binding.cvGhosts.setOnClickListener {
+            var newScore = viewModel.score.value!!.score+1
             //Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
             if (reportGhosts.id == ghostName) {
 
-                viewModel._score.value =+ 1
+               // viewModel._score.value!!.score =+ 1
+
+                viewModel.updateScore(newScore,1)
 
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 
                 //Toast.makeText(context, "${viewModel._score}", Toast.LENGTH_SHORT).show()
 
             }else{
+
                 navController.navigate(R.id.action_popUpFragment_to_wrongAnswerFragment)
             }
         }
