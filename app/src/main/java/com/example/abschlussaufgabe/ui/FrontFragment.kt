@@ -2,6 +2,7 @@ package com.example.abschlussaufgabe.ui
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +48,25 @@ class FrontFragment : Fragment() {
         binding.ivEins.visibility = View.INVISIBLE
     }
 
+    fun spawnErmi(){
+        binding.ivSechs.visibility = View.VISIBLE
+    }
+
+    fun randomGhost():Int{
+        var ghostId = 0
+        var funktionCount = (1..2).random()
+
+        if(funktionCount == 1){
+            spawnErmi()
+            ghostId = viewModel.ghosts.value!![4].id
+        }
+        if(funktionCount == 2 ){
+            spawnMimic()
+            ghostId = viewModel.ghosts.value!![0].id
+        }
+        return ghostId
+    }
+
 
 
 
@@ -58,20 +78,17 @@ class FrontFragment : Fragment() {
         //spwanTimer
         val delayMillis = (400..800).random()
 
-        //initialize Ghosts
 
 
 
-        val mimic = viewModel.ghosts.value!![0]
-        //binding.ivEins.setImageResource(mimic.image)
-
-
-
+    var ghostId = 0
 
         //spawn the ghost with randomlytimer
         viewModel.viewModelScope.launch(Dispatchers.Main) {
             delay(delayMillis.toLong())
-            spawnMimic()
+
+            viewModel.aktuelleGhostId = randomGhost()
+
 
 
         }
@@ -81,14 +98,15 @@ class FrontFragment : Fragment() {
         //to report the Ghosts
         binding.btnReport.setOnClickListener {
 
+
                 findNavController().navigate(
-                    FrontFragmentDirections.actionFrontFragmentToPopUpFragment(mimic.name))
+                    FrontFragmentDirections.actionFrontFragmentToPopUpFragment(ghostId))
             }
 
 
         //score
-        viewModel.score.observe(viewLifecycleOwner){
-            binding.tvScore.text = it.score.toString()
+        viewModel.scoreToShow.observe(viewLifecycleOwner){
+            binding.tvScore.text = it.toString()
 
         }
 

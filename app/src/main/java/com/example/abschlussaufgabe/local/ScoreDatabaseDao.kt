@@ -14,14 +14,14 @@ interface ScoreDatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(score:Score)
 
-    @Query("UPDATE Score SET score = :score WHERE id = :id")
-    suspend fun update(id: Int, score: Int)
+    @Query("UPDATE Score SET score = :score WHERE userUid = :userUid")
+    suspend fun update(userUid: String, score: Int)
 
     @Query("SELECT * FROM Score")
     fun getAll(): LiveData<List<Score>>
 
     @Query("SELECT * FROM Score WHERE userUid = :userUid")
-    fun getById(userUid: String): List<Score>
+    suspend fun getById(userUid: String): List<Score>
 
     @Query("DELETE FROM Score WHERE id = :id")
     suspend fun deleteById(id: Int)

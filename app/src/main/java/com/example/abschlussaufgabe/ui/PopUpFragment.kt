@@ -52,8 +52,10 @@ class PopUpFragment : Fragment() {
         //rvReport
         viewModel.ghosts.observe(viewLifecycleOwner) {
             binding.rvReportGhost.adapter =
-                ReportGhostAdapter(requireContext(), it, viewModel, ghostsName!!, navController)
+                ReportGhostAdapter(requireContext(), it, viewModel, navController)
         }
+
+
 
 
     }

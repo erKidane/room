@@ -18,6 +18,7 @@ class Apprepository(private val database: ScoreDatabase) {
         get() = _ghostList
 
 
+
     init {
         loadGhosts()
     }
@@ -48,13 +49,17 @@ class Apprepository(private val database: ScoreDatabase) {
         }
     }
 
-    suspend fun update(score: Int, id:Int) {
+    suspend fun update(userUid: String, score:Int) {
+
         try {
-            database.scoreDatabaseDao.update(score,id)
+            database.scoreDatabaseDao.update(userUid,score)
+
         } catch (e: Exception) {
             Log.e(TAG,"Failed to update database: $e")
         }
+
     }
+
 
     suspend fun delete(score: Score) {
         try {
@@ -64,8 +69,10 @@ class Apprepository(private val database: ScoreDatabase) {
         }
     }
 
-    suspend fun getById(userUid:String) :Score{
+    /*suspend fun getById(userUid:String) :Score{
         var b = Score(1,"user1", 0)
+
+
         try{
             b = database.scoreDatabaseDao.getById(userUid).first()
             database.scoreDatabaseDao.getById(userUid)
@@ -74,7 +81,7 @@ class Apprepository(private val database: ScoreDatabase) {
         }
         return b
     }
-
+*/
 
 
 

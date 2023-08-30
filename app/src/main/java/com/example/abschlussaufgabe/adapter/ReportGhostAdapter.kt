@@ -24,7 +24,6 @@ class ReportGhostAdapter(
     private val context: Context,
     private val dataset: List<Ghost>,
     private val viewModel: MainViewModel,
-    private val ghostName: Int,
     private val navController: NavController
 
 ) : RecyclerView.Adapter<ReportGhostAdapter.ItemViewHolder>() {
@@ -43,20 +42,43 @@ class ReportGhostAdapter(
 
 
 
+
         holder.binding.tvTilte.text = context.resources.getString((reportGhosts.name))
         holder.binding.ivGhostPic.setImageResource(reportGhosts.image)
         holder.binding.tvDescrib.text = context.resources.getString((reportGhosts.description))
 
+
+
         //todo: better a when
 
         holder.binding.cvGhosts.setOnClickListener {
-            var newScore = viewModel.score.value!!.score+1
+
+           viewModel.adapterPostition = reportGhosts.id
+
+            Log.e("adapter","${viewModel.adapterPostition}")
+            Log.e("viewModel","${viewModel.aktuelleGhostId}")
+
+
             //Log.e("reportGhostAdapter","ghostname == ${ghostName} reportGhostName == ${reportGhosts.name}")
-            if (reportGhosts.id == ghostName) {
+            if (viewModel.adapterPostition == viewModel.aktuelleGhostId) {
+/*
+                Log.e("blalal",viewModel._score.value!!.score.toString())
 
-               // viewModel._score.value!!.score =+ 1
+                viewModel._score.value!!.score += 1
 
-                viewModel.updateScore(newScore,1)
+                //var newScore = 0
+                //var outScore = viewModel._score.value!!.score
+
+                //newScore = outScore+1
+                Log.e("blalal2",viewModel._score.value!!.score.toString())
+                viewModel.updateScore("user1", viewModel._score.value!!.score)
+
+*/
+                viewModel.updateScore2(1)
+
+
+
+
 
                 navController.navigate(R.id.action_popUpFragment_to_rightAnswerFragment)
 

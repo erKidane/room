@@ -8,5 +8,5 @@ data class Score(
     @PrimaryKey(autoGenerate = true)
     val id:Int,
     val userUid:String,
-    var score: Int
+    var score: Int = 0
 )
